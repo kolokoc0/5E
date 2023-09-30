@@ -1,8 +1,18 @@
+import tkinter as tk
+
+win = tk.Tk()
+
+canvas = tk.Canvas(win, width = 450, height = 450, bg = "white")
+canvas.pack()
+
+
 subor = open("sudoku.txt","r", encoding="utf-8")
 sudoku = []
 
 # for i in subor:
 #     print(i, end="")
+
+
 
 def inputParser(subor,sudoku):
     for row in subor:
@@ -25,6 +35,20 @@ def check(x:int,y:int,n:int) -> bool:
             if sudoku[zac_y+j][zac_x+i] == n:
                 return False
     return True
+
+def create_grid():
+    for x in range(9):
+        if (x*50)%3==0:
+            widt = 5
+        else:
+            widt = 2
+        canvas.create_line(x*50,0,x*50,450,width=widt)
+        canvas.create_line(0,x*50,450,x*50,width=widt)
+    for y in range(9):
+        for x in range(9):
+            canvas.create_text(x*50+10,y*50,text = str(sudoku[y][x]),anchor = "nw",font = ("Arial",35))
+
+
 ran = 0
 temp = False
 def solver_of_life():
@@ -43,10 +67,30 @@ def solver_of_life():
                         return
                     else:
                         ran+=1
+<<<<<<< HEAD
                 return sudoku
                 
     
     print(sudoku)
+=======
+                return
+>>>>>>> cc89bcf8864d213ed386b98e602cb6ee9c54730e
 
+    create_grid()
 solver_of_life()
+
+def create_grid():
+    for x in range(9):
+        if (x*50)%3==0:
+            widt = 5
+        else:
+            widt = 2
+        canvas.create_line(x*50,0,x*50,450,width=widt)
+        canvas.create_line(0,x*50,450,x*50,width=widt)
+    for y in range(9):
+        for x in range(9):
+            canvas.create_text(x*50+10,y*50,text = str(sudoku[y][x]),anchor = "nw",font = ("Arial",35))
+
+
+win.mainloop()
 
