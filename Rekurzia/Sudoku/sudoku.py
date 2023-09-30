@@ -43,7 +43,7 @@ def solver_of_life():
                         return
                     else:
                         ran+=1
-                return
+                return sudoku
                 
     
     print(sudoku)
