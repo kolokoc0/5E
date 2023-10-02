@@ -42,6 +42,7 @@ with open ('effectiveness_new.json') as file:
 #                 duo_list = [ ]
 #                 result = 1
 #     print(cumTypeAdv)
+
 def calculator(pokemons1,pokemons2):
     resultduel = 1
     duels = []
@@ -83,10 +84,10 @@ def game(number1,number2,listpok):
     player1_val = calculator(pokemons1,pokemons2)
     player2_val = calculator(pokemons2,pokemons1)
     if player1_val >player2_val:
-        return (player1_val,player2_val,"ME")
+        return "{:.1f}".format(player1_val),"{:.1f}".format(player2_val),"ME"
     elif player1_val==player2_val:
-        return(player1_val,player2_val,"BALANCED")
+        return "{:.1f}".format(player1_val),"{:.1f}".format(player2_val),"BALANCE"
     elif player1_val<player2_val:
-        return (player1_val,player2_val,"FOE")
+        return "{:.1f}".format(player1_val),"{:.1f}".format(player2_val),"BALANCE"
 
 print(game(4,4,"Psychic Dark,Fire,Ghost Ice,Fairy Electric,Normal Steel,Ghost,Poison Fire,Dark Bug"))
