@@ -67,14 +67,7 @@ def solver_of_life():
                         return
                     else:
                         ran+=1
-<<<<<<< HEAD
-                return sudoku
-                
-    
-    print(sudoku)
-=======
                 return
->>>>>>> cc89bcf8864d213ed386b98e602cb6ee9c54730e
 
     create_grid()
 solver_of_life()
